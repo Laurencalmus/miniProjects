@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" title="white" href="../style.css">
+    <link rel="stylesheet" type="text/css" title="white" href="style.css">
+    <title>Mini Projects</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li>
+            <a href="../algorithms/algorithmsIndex.html">Classic Algorithms</a> 
+        </li>
+        <li>
+            <a href="../text/textIndex.html">Text</a> 
+        </li>
+        <li>
+            <a href="../numbers/numbersIndex.html">Numbers</a> 
+        </li>
+        <li>
+            <a href="../games/gamesIndex.html">Games</a> 
+        </li>
+        <li>
+            <a href="../graph/graphIndex.html">Graph</a> 
+        </li>
+        <li>
+            <a href="../data/dataIndex.html">Data Structures</a> 
+        </li>
+         <li>
+            <a href="../classes/classesIndex.html">Classes</a> 
+        </li>
+    </ul>
+</nav>
+ 
+<div class="container">
+    <h1><a class = "home" href="../index.html"> Mini  Projects</a> : 
+        <a class ="navLink" href="textIndex.html">Text : </a>
+        <br>
+        <a class ="navLink" href="iglatinpay.html">Pig Latin </a></h1>
+    
+    <h3 class="description">Pig Latin is a game of alterations played on the English language. 
+        To create the Pig Latin form of an English word the initial consonant sound is transposed to the end of the word and an ay is affixed.
+    Type something and push the button to transform it into Pig Latin.</h3>
+</div>
+<div id="wrapper">
+    <ul class="buttons">
+        <li><input type="text" id="input" value="" placeholder="Type something here..."></li>
+        <li><button onclick="pigLatinize()">Pig Latin</button></li>
+        <li><button onclick="showCode()">Show code</button></li>
+    </ul>
+
+    <h2><div id="resultDisp">
+    </div></h2>
+    
+    <h2><div id="codeDIsp"><img id="codePigLatin" src="codePigLatin.png" style="display:none;"/>
+    </div></h2> 
+</div>
+
+<script>
+
+function pigLatinize() {
+    var string = document.getElementById("input").value;
+
+    var returnArray = [],
+		wordArray = string.split(' ');
+
+	for (var i = 0; i < wordArray.length; i++) {
+		var word = wordArray[i];
+		var beginning = word.charAt(0);
+
+		if (/[aeiouAEIOU]/.test(beginning)) {
+			returnArray.push(word += 'way');
+			continue;
+		}
+
+		for (var ii = 1; ii < word.length; ii++) {
+			if (/[aeiouAEIOU]/.test(word.charAt(ii))) {
+				break;
+			} else {
+				beginning += word.charAt(ii);
+			}
+		}
+
+		returnArray.push(word.substr(beginning.length) + beginning + 'ay');
+	}
+	var result = returnArray.join(' ');
+    document.getElementById("resultDisp").innerHTML = result;
+}
+
+function showCode() {
+        document.getElementById('codePigLatin').style.display='block';
+}
+
+</script>
+</body>
+</html>

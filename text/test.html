@@ -1,0 +1,99 @@
+HTML
+
+<ul class="buttons">
+    <li><button onclick="printFizzBuzz()">Execute</button></li>
+    <li><button onclick="showCode()">Show code</button></li>
+</ul>
+
+<h2><div id="resultDisp">
+</div></h2>
+
+<h2><div id="codeDIsp"><img id="codePicFizzBuzz" src="codePicFizzBuzz.png" style="display:none;"/>
+</div></h2>
+
+JAVASCRIPT
+
+<script>
+
+var fin = [ ];
+
+for (var startNum = 1; startNum <= 100; startNum++){
+        if (startNum % 3 === 0 && startNum % 5 === 0) {
+            fin+=("FizzBuzz" + " ");
+        } else if (startNum % 3 === 0){
+            fin+=("Fizz" + " ");
+        } else if (startNum % 5 === 0){
+            fin+=("Buzz" + " ");
+        } else {
+            fin+=(startNum + " ");
+        }
+}
+function printFizzBuzz() {
+    document.getElementById("resultDisp").innerHTML = fin;
+}
+function showCode() {
+    document.getElementById('codePicFizzBuzz').style.display='block';
+}
+
+</script>
+
+
+
+
+
+
+HTML
+
+<ul class="buttons">
+        <li><input type="text" id="input" value=""></li>
+        <li><button onclick="pigLatinize()">Pig Latin</button></li>
+        <li><button onclick="showCode()">Show code</button></li>
+    </ul>
+
+    <h2><div id="resultDisp">
+    </div></h2>
+    
+    <h2><div id="codeDIsp"><img id="codePigLatin" src="codePicFizzBuzz.png" style="display:none;"/>
+    </div></h2> 
+
+
+JAVASCRIPT
+
+<script>
+
+        function pigLatinize() {
+            var string = document.getElementById("input").value;
+        
+            var returnArray = [],
+                wordArray = string.split(' ');
+        
+            for (var i = 0; i < wordArray.length; i++) {
+                var word = wordArray[i];
+                var beginning = word.charAt(0);
+        
+                if (/[aeiouAEIOU]/.test(beginning)) {
+                    returnArray.push(word += 'way');
+                    continue;
+                }
+        
+                for (var ii = 1; ii < word.length; ii++) {
+                    if (/[aeiouAEIOU]/.test(word.charAt(ii))) {
+                        break;
+                    } else {
+                        beginning += word.charAt(ii);
+                    }
+                }
+        
+                returnArray.push(word.substr(beginning.length) + beginning + 'ay');
+            }
+            var result = returnArray.join(' ');
+            document.getElementById("resultDisp").innerHTML = result
+        }
+        
+        function showCode() {
+                document.getElementById('codePigLatin').style.display='block';
+        }
+
+        </script>
+
+

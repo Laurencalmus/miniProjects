@@ -1,0 +1,175 @@
+body {
+    background-color: rgba(54, 117, 252, 0.884);
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border: 1px solid rgba(54, 117, 252, 0.001);
+}
+
+ul{ list-style-type: none; }
+
+nav {
+    text-align: right;
+    padding: 10px 0;
+    margin: 10px 0 0;
+    width: 30%;
+    float: right;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 1%;
+    margin: 0 10px;
+}
+
+nav li {
+    /*display: inline-block;*/
+}
+
+nav li.active a {
+    background-color: white;
+    border-radius: 25px;
+}
+
+nav a {
+    /*display: block;*/
+    padding: 10px;
+    text-decoration: none;
+    color: darkblue;
+    font-size: 2em;
+    letter-spacing: -2px;
+    text-transform: lowercase;
+}
+
+nav li a:hover {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-weight: normal;
+}
+
+.container {
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    max-width: 70%;
+    margin-left: 1.5%;
+    
+}
+
+h1 {
+    color: yellow;
+    font-size: 4em;
+    letter-spacing: -2px;
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+
+h2 {
+    font-size: 2em;
+    letter-spacing: -2px;
+    margin: -0.5px;
+}
+
+h3 {
+    font-size: 1.4em;
+    letter-spacing: -2px;
+    margin: -0.5px;
+}
+
+.home {
+    color: yellow;
+    text-decoration: none;
+}
+
+.navLink {
+    color: yellow;
+    text-decoration: none;
+}
+
+.subNav {
+    text-align: left;
+    padding: 10px 0;
+    margin: 10px 0 0;
+}
+
+.subNav ul {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 1%;
+    margin: 0 10px;
+}
+
+.subNav li {
+    /*display: inline-block;*/
+}
+
+.subNav li.active a {
+    background-color: white;
+    border-radius: 25px;
+}
+
+.subNav a {
+    /*display: block;*/
+    padding: 10px;
+    text-decoration: none;
+    color: darkblue;
+    font-size: 1.5em;
+    letter-spacing: -2px;
+    text-transform: lowercase;
+}
+
+.subNav li a:hover {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-weight: normal;
+}
+
+.description {
+    width: 100%;
+    position: relative;
+}
+
+button {
+    border: 0;
+    background-color: darkblue;
+    box-shadow: none;
+    border-radius: 2px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    margin-left: 7%;
+
+}
+
+.buttons {
+    text-align: left;
+
+}
+
+.buttons {
+    padding-left: 0;
+}
+
+.buttons li {
+    display: inline-block;
+}
+
+@media screen and (max-width: 930px) {
+    nav a {
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+}
